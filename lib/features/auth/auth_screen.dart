@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:reddit_moderator_toolset/features/auth/auth_service.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:reddit_moderator_toolset/features/auth/auth_provider.dart';
 
-class AuthScreen extends StatefulWidget {
+class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
 
   @override
-  State<AuthScreen> createState() => _AuthScreenState();
-}
-
-class _AuthScreenState extends State<AuthScreen> {
-  final AuthService _authService = AuthService();
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign In'),
-      ),
+      appBar: AppBar(title: const Text('Sign In')),
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            await _authService.signIn();
+            await ref.read(authServiceProvider).signIn();
           },
           child: const Text('Sign In with Reddit'),
         ),

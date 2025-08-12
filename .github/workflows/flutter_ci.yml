@@ -20,5 +20,10 @@ jobs:
       - name: Analyze code
         run: flutter analyze
       - name: Run tests
-        run: flutter test
+        run: flutter test --coverage
+      - name: Enforce coverage threshold
+        run: |
+          pct=$(lcov --summary coverage/lcov.info | awk '/lines/ {print $2}' | sed 's/%//')
+          echo "Coverage: ${pct}%"
+          awk -v p="$pct" 'BEGIN { if (p+0 < 75) { print "Coverage below 75%: " p "%"; exit 1 } }'
 

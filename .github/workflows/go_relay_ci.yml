@@ -21,6 +21,11 @@ jobs:
           go build ./...
         working-directory: relay/go
       - name: Run tests
-        run: go test ./...
+        run: go test -coverprofile=coverage.out ./...
+      - name: Enforce coverage threshold
+        run: |
+          pct=$(go tool cover -func=coverage.out | awk '/total:/ {print $3}' | sed 's/%//')
+          echo "Coverage: ${pct}%"
+          awk -v p="$pct" 'BEGIN { if (p+0 < 75) { print "Coverage below 75%: " p "%"; exit 1 } }'
         working-directory: relay/go
 

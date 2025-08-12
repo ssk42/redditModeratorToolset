@@ -3,8 +3,14 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter/foundation.dart';
 
 class AuthService {
-  final FlutterAppAuth _appAuth = const FlutterAppAuth();
-  final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
+  final FlutterAppAuth _appAuth;
+  final FlutterSecureStorage _secureStorage;
+
+  const AuthService({
+    FlutterAppAuth? appAuth,
+    FlutterSecureStorage? secureStorage,
+  }) : _appAuth = appAuth ?? const FlutterAppAuth(),
+       _secureStorage = secureStorage ?? const FlutterSecureStorage();
 
   Future<void> signIn() async {
     try {
