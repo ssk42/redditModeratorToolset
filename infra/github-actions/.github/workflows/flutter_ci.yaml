@@ -1,0 +1,33 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32' # Use the version from .tool-versions
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: reddit_moderator_toolset/app/
+
+      - name: Analyze code
+        run: flutter analyze
+        working-directory: reddit_moderator_toolset/app/
+
+      - name: Run tests
+        run: flutter test
+        working-directory: reddit_moderator_toolset/app/

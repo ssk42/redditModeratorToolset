@@ -1,0 +1,9 @@
+graph TD
+  A[Flutter App] -- OAuth2 PKCE --> R[Reddit API]
+  A -- Optional: Register Device --> RS[(Relay API)]
+  RS -- Poll Modqueue/Modmail --> R
+  RS -- Push Notifications --> APNs/FCM
+  RS --> DB[(Postgres: users/devices/tokens/prefs)]
+  RS --> Cache[(Redis: rate buckets, cursors)]
+  A -- On Push: Fetch Fresh Data --> R
+

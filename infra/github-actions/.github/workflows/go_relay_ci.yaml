@@ -1,0 +1,31 @@
+name: Go Relay CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.0' # Use the version from .tool-versions
+
+      - name: Install dependencies and build
+        run: |
+          go mod tidy
+          go build ./...
+        working-directory: reddit_moderator_toolset/relay/go/
+
+      - name: Run tests
+        run: go test ./...
+        working-directory: reddit_moderator_toolset/relay/go/

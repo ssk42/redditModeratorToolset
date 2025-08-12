@@ -1,0 +1,4 @@
+go 1.25.0
+nodejs 22
+dart 3.8.3
+flutter 3.32
