@@ -1,6 +1,7 @@
 import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter/foundation.dart';
+import 'package:reddit_moderator_toolset/core/env/env.dart';
 
 class AuthService {
   final FlutterAppAuth _appAuth;
@@ -17,8 +18,8 @@ class AuthService {
       final AuthorizationTokenResponse? result = await _appAuth
           .authorizeAndExchangeCode(
             AuthorizationTokenRequest(
-              'd3dJ2g8v3f4c1A', // TODO: Replace with your client ID
-              'com.example.app:/', // TODO: Replace with your redirect URI
+              Env.redditClientId,
+              Env.redditRedirectUri,
               serviceConfiguration: const AuthorizationServiceConfiguration(
                 authorizationEndpoint:
                     'https://www.reddit.com/api/v1/authorize.compact',
