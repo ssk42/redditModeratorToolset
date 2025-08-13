@@ -27,5 +27,11 @@ Auth uses `flutter_appauth` + `flutter_secure_storage`. Update `features/auth/au
 ## CI
 GitHub Actions are configured for Flutter and the Go relay in `.github/workflows/`.
 
+E2E browser smoke tests (Playwright) are available under `e2e/` and run in CI.
+To run locally:
+```
+cd e2e && npm install && npx playwright install --with-deps && npx playwright test
+```
+
 ## Diagrams
 See `docs/architecture_overview.mmd` for the Mermaid diagram of the system.

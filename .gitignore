@@ -43,3 +43,51 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Coverage reports
+coverage/
+**/coverage.out
+
+# iOS / CocoaPods
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.podspec
+
+# Android / Gradle
+/android/.gradle/
+/android/**/local.properties
+/android/**/generated/
+/android/**/captures/
+
+# macOS
+/macos/Flutter/ephemeral/
+
+# Web
+/web/.dart_tool/
+
+# Windows/Linux build
+/windows/**/*.pdb
+/windows/**/*.obj
+/linux/**/build/
+
+# Go
+relay/go/bin/
+relay/go/dist/
+relay/go/*.exe
+relay/go/*.out
+
+# Node / E2E (Playwright)
+e2e/node_modules/
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+**/playwright-report/
+**/test-results/
+~/.cache/ms-playwright/
+
+# Local env files
+.env
+.env.*
+
+# Editor
+.vscode/
