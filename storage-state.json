@@ -1,0 +1,21 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.reddit.com/');
+  await page.getByRole('link', { name: 'Log In' }).click();
+  await page.getByRole('textbox', { name: 'Email or username' }).click();
+  await page.getByRole('textbox', { name: 'Email or username' }).click();
+  await page.getByRole('textbox', { name: 'Email or username' }).click({
+    button: 'right'
+  });
+  await page.getByRole('textbox', { name: 'Email or username' }).click();
+  await page.getByRole('textbox', { name: 'Email or username' }).fill('ssk42');
+  await page.getByRole('textbox', { name: 'Email or username' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).fill('5TeveLogsOnT');
+  await page.getByRole('textbox', { name: 'Password' }).press('ControlOrMeta+a');
+  await page.getByRole('textbox', { name: 'Password' }).fill('');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('5TeveTriesToGetKarma!');
+  await page.getByRole('button', { name: 'Log In' }).click();
+});

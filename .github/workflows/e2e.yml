@@ -21,7 +21,16 @@ jobs:
       - name: Install browsers
         run: npx playwright install --with-deps
         working-directory: e2e
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run Playwright tests (public)
+        run: npx playwright test tests/reddit_modqueue_smoke.spec.ts
+        working-directory: e2e
+      - name: Run Playwright tests (authenticated)
+        if: ${{ secrets.E2E_STORAGE_STATE_JSON != '' }}
+        env:
+          E2E_STORAGE_STATE_JSON: ${{ secrets.E2E_STORAGE_STATE_JSON }}
+          STORAGE_STATE: storage-state.json
+        run: |
+          echo "$E2E_STORAGE_STATE_JSON" > storage-state.json
+          npx playwright test tests/reddit_modqueue_authenticated.spec.ts
         working-directory: e2e
 
