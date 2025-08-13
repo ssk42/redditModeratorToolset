@@ -1,0 +1,8 @@
+flowchart LR
+  App[Flutter App] --> Repo[Modmail Repository]
+  Repo --> Client[ModmailClient]
+  Client -->|Bearer token| Reddit[Reddit Modmail API]
+  Reddit --> Client
+  Client --> Repo
+  Repo --> UI[ModmailScreen]
+
