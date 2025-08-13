@@ -1,0 +1,8 @@
+flowchart LR
+  App[Flutter App] --> Repo[Modqueue Repository]
+  Repo --> Client[RedditClient]
+  Client -->|Bearer token| Reddit[Reddit OAuth API]
+  Reddit --> Client
+  Client --> Repo
+  Repo --> UI[ModqueueScreen: ListView]
+

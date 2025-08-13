@@ -1,0 +1,20 @@
+mode: set
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:12.64,16.2 3 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:19.68,20.33 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:20.33,23.3 2 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:25.2,25.70 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:29.63,30.33 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:30.33,33.3 2 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:35.2,35.68 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:39.59,40.18 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:41.22,43.73 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:44.22,46.70 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:47.10,48.83 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:53.67,54.33 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:54.33,57.3 2 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/handlers.go:59.2,59.66 1 0
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/router.go:9.31,12.74 2 1
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/router.go:12.74,17.3 2 1
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/router.go:19.2,19.74 1 1
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/router.go:19.74,25.3 2 1
+github.com/ssk42/redditModeratorToolset/relay/go/internal/api/router.go:27.2,32.12 5 1

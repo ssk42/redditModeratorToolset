@@ -5,6 +5,7 @@ import 'package:reddit_moderator_toolset/core/theme/app_theme.dart';
 import 'package:reddit_moderator_toolset/core/routing/go_router_notifier.dart';
 import 'package:reddit_moderator_toolset/features/auth/auth_screen.dart';
 import 'package:reddit_moderator_toolset/features/home/home_screen.dart';
+import 'package:reddit_moderator_toolset/features/modqueue/modqueue_screen.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -16,6 +17,10 @@ GoRouter _createRouter(WidgetRef ref) {
     routes: [
       GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
       GoRoute(path: '/auth', builder: (context, state) => const AuthScreen()),
+      GoRoute(
+        path: '/modqueue',
+        builder: (context, state) => const ModqueueScreen(),
+      ),
     ],
     refreshListenable: notifier,
     redirect: (context, state) {
